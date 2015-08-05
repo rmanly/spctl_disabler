@@ -1,0 +1,10 @@
+#!/bin/bash
+
+REGEX="enabled$"
+status=$(spctl --status)
+
+if [[ $status =~ $REGEX ]]; then
+    exit 0
+else
+    exit 1
+fi
